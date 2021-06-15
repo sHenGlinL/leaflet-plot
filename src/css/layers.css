@@ -1,0 +1,9 @@
+.marker-icon {
+  background-color: #ffffff;
+  border: 1px solid #3388ff;
+  border-radius: 50%;
+  margin: -8px 0 0 -8px !important;
+  width: 14px !important;
+  height: 14px !important;
+  outline: none;
+}

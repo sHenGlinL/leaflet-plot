@@ -46,6 +46,20 @@ import 'leaflet-plot/dist/leaflet-plot.css';
 
 Currently available shapes are `StraightArrow`, `RightAngleArrow`, `TailedArrow`, `DoubleArrow`.
 
+
+### Create function
+
+Use Create function on a map like this
+```js
+// StraightArrow create function
+const arrowLayer = window.L.SL.Create.StraightArrow(latlngs, options)
+
+```
+##### See the available options.
+latlngs: Array<Array<string>>
+
+options: [leaflet path options](https://leafletjs.com/reference-1.4.0.html#path)
+
 ### Drawing Mode
 
 Use Drawing Mode on a map like this
@@ -57,11 +71,11 @@ map.sl.enableDraw('StraightArrow', options);
 // disable drawing mode
 map.sl.disableDraw();
 ```
-#####See the available options.
+##### See the available options.
 
 options: [leaflet path options](https://leafletjs.com/reference-1.4.0.html#path)
 
-#####You can listen to map events to hook into the drawing procedure like this:
+##### You can listen to map events to hook into the drawing procedure like this:
 
 ```js
 map.on('sl:create', e => {
@@ -82,7 +96,7 @@ Let's you edit vertices of layers. Use it like this:
 layer.sl.enable();
 ```
 
-#####You can listen to map events to hook into the drawing procedure like this:
+##### You can listen to map events to hook into the drawing procedure like this:
 
 ```js
 map.on('sl:edit', e => {

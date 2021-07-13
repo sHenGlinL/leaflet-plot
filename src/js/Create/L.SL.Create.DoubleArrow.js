@@ -45,7 +45,9 @@ function doubleArrow(pnts, options) {
 
     var pList = rlBodyPnts.concat(rArrowPnts, bodyPnts, lArrowPnts, lrBodyPnts);
     const arrow = L.polygon(pList, options)
-    arrow._plotNodes = pnts
+    arrow._plotNodes = [...pnts]
+    arrow._plotNodes[3] = arrowOptions.tempPoint4
+    arrow._plotNodes[4] = arrowOptions.connPoint
     arrow._shape = 'DoubleArrow'
     return arrow
 }

@@ -15,8 +15,8 @@ npm i leaflet-plot
 #### Install Manually
 
 Download
-[`leaflet-plot.css`](https://unpkg.com/leaflet-plot@1.0.0/dist/leaflet-plot.css) and
-[`leaflet-plot.min.js`](https://unpkg.com/leaflet-plot@1.0.0/dist/leaflet-plot.min.js)
+[`leaflet-plot.css`](https://unpkg.com/leaflet-plot@1.0.1/dist/leaflet-plot.css) and
+[`leaflet-plot.min.js`](https://unpkg.com/leaflet-plot@1.0.1/dist/leaflet-plot.min.js)
 and include them in your project.
 
 #### Include via CDN
@@ -26,13 +26,13 @@ CSS
 <!-- prettier-ignore -->
 ```html
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet-plot@1.0.0/dist/leaflet-plot.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet-plot@1.0.1/dist/leaflet-plot.css" />
 ```
 
 JS
 
 ```html
-<script src="https://unpkg.com/leaflet-plot@1.0.0/dist/leaflet-plot.min.js"></script>
+<script src="https://unpkg.com/leaflet-plot@1.0.1/dist/leaflet-plot.min.js"></script>
 ```
 
 #### Include as ES6 Module

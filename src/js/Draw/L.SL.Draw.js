@@ -40,16 +40,15 @@ const Draw = L.Class.extend({
     return node
   },
   clearTemps() {
-    this.tempGp.layerNode = []
-    this.tempGp.layerNodeLen = 0
     this.tempGp.tempLayer && this.tempGp.tempLayer.remove()
     this.tempGp.tempNode.map(el => el.remove())
-  },
-  drawOn() {
+
     this.tempGp.layerNode = []
     this.tempGp.layerNodeLen = 0
     this.tempGp.tempNode = []
     this.tempGp.tempLayer = null
+  },
+  drawOn() {
     this.clearTemps()
     this._map.doubleClickZoom.disable()
     // change map cursor

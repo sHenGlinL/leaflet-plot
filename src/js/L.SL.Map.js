@@ -8,6 +8,7 @@ const Map = L.Class.extend({
     this.Draw.enable(shape, options)
   },
   disableDraw() {
+    this.Draw.clearTemps()
     // TODO 停止绘制时，如何优雅的移除编辑的临时点
     this.map.fire('sl:disable')
   },

@@ -44,6 +44,8 @@ function doubleArrow(pnts, options) {
     lrBodyPnts = PlotUtils.getBezierPoints(lrBodyPnts);
 
     var pList = rlBodyPnts.concat(rArrowPnts, bodyPnts, lArrowPnts, lrBodyPnts);
+    if (pList.some(p => isNaN(p[0]) || isNaN(p[1]))) return null
+
     const arrow = L.polygon(pList, options)
     arrow._plotNodes = [...pnts]
     arrow._plotNodes[3] = arrowOptions.tempPoint4

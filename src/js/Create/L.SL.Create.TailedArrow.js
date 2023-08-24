@@ -44,6 +44,8 @@ function tailedArrow(pnts, options) {
     rightPnts = PlotUtils.getQBSplinePoints(rightPnts);
 
     const pList = [leftPnts.concat(headPnts, rightPnts.reverse(), [arrowOptions.swallowTailPnt, leftPnts[0]])]
+    if (pList[0].some(p => isNaN(p[0]) || isNaN(p[1]))) return null
+
     const arrow = L.polygon(pList, options)
     arrow._plotNodes = pnts
     arrow._shape = 'TailedArrow'

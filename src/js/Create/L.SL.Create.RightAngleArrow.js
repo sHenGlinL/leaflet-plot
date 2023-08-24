@@ -29,6 +29,8 @@ function rightAngleArrow(pnts, options) {
     const neckRight = PlotUtils.getThirdPoint(pnt1, pnt2, arrowOptions.neckAngle, neckWidth, true)
     const pList = [tailLeft, neckLeft, headLeft, pnt2, headRight, neckRight, tailRight]
 
+    if (pList.some(p => isNaN(p[0]) || isNaN(p[1]))) return null
+
     const arrow = L.polygon(pList, options)
     arrow._plotNodes = pnts
     arrow._shape = 'RightAngleArrow'

@@ -9,6 +9,11 @@ Draw.RightAngleArrow = Draw.extend({
   enable(options) {
     this.drawOn()
     this._map.on("click", evt => {
+      const lastTempNode = this.tempGp.tempNode[this.tempGp.tempNode.length - 1]
+      if (lastTempNode && evt.latlng.lat === lastTempNode._latlng.lat && evt.latlng.lng == lastTempNode._latlng.lng) {
+        return
+      }
+
       this.tempGp.layerNode.push([evt.latlng.lat, evt.latlng.lng])
       this.tempGp.layerNodeLen = this.tempGp.layerNode.length
       this.tempGp.tempNode.push(this.addNode(evt.latlng))
@@ -30,7 +35,10 @@ Draw.RightAngleArrow = Draw.extend({
           evt.latlng.lat,
           evt.latlng.lng
         ]
-        this.tempGp.tempLayer = createFun(this.tempGp.layerNode, options).addTo(this._map)
+        const arrow = createFun(this.tempGp.layerNode, options)
+        if (arrow) {
+          this.tempGp.tempLayer = arrow.addTo(this._map)
+        }
       }
     })
   }

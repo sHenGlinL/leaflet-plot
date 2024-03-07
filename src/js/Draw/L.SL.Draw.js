@@ -54,14 +54,17 @@ const Draw = L.Class.extend({
     // change map cursor
     this._map._container.style.cursor = 'crosshair'
     // 移除监听地图事件
-    this._map.off("click")
-    this._map.off("mousemove")
-    this._map.off("dblclick")
+    this.unable()
   },
   drawOff() {
-    this._map.off("click");
-    this._map.off("mousemove");
-    this._map.off("dblclick");
+    if (this._shape) {
+      this.unable()
+    } else {
+      this.shapes.forEach(shape => {
+        this[shape].unable()
+      })
+    }
+    
     this._map.doubleClickZoom.enable()
     // reset cursor
     this._map._container.style.cursor = '';
